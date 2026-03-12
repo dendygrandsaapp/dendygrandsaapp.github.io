@@ -90,6 +90,68 @@ footer {
     display: none;
 }
 
+/* Container Utama untuk Semua Halaman Status */
+.status-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+.status-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.status-container h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.status-container p {
+    color: #cdcdcd;
+    max-width: 450px;
+    margin: 15px 0 30px;
+    line-height: 1.6;
+}
+
+/* Tombol Universal */
+.btn-back {
+    border: 2px solid;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* --- TEMA KHUSUS --- */
+
+/* Coming Soon (Cyan/Blue) */
+.coming-soon .status-icon, .coming-soon h1 { color: #00e5ff; }
+.coming-soon .btn-back { border-color: #00e5ff; color: #00e5ff; }
+.coming-soon .btn-back:hover { background: #00e5ff; color: #121212; }
+
+/* Closed Channel (Red/Grey) */
+.closed .status-icon, .closed h1 { color: #ff3d00; }
+.closed .btn-back { border-color: #ff3d00; color: #ff3d00; }
+.closed .btn-back:hover { background: #ff3d00; color: #fff; }
+
+/* Encrypted (Gold/Yellow) */
+.encrypted .status-icon, .encrypted h1 { color: #ffea00; }
+.encrypted .btn-back { border-color: #ffea00; color: #ffea00; }
+.encrypted .btn-back:hover { background: #ffea00; color: #121212; }
+
+@media (max-width: 768px) {
+    .status-container h1 { font-size: 2.5rem; }
+}
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
@@ -179,6 +241,7 @@ input, textarea {
 .card { padding: 1px; border-radius: 8px; font-size: 1.2rem; text-align: center; cursor: pointer; transition: 0.3s; }
 .card:hover { border: 1px solid var(--accent); transform: scale(1.05); }
 .card img { width: 100%; border-radius: 5px; }
+
 
 
 
