@@ -15,7 +15,7 @@
     }
 
     .container {
-      padding: 37px 12px;
+      padding: 37px 0px;
     }
 
     nav {
@@ -33,7 +33,7 @@
     .page-header {
       color: #000;
       margin-bottom: 11px;
-      margin-left: -5px;
+      margin-left: 19px;
       font-family: SF Pro Display;
       font-size: 42px;
       font-weight: 700;
@@ -41,15 +41,25 @@
 
     iframe {
       width: 100%;
-      height: auto;
+      height: 618px;
     }
 
     #top-bar {
       display : none;
     }
       
-    @media screen and (orientation: portrait) {
-        
+    @media (max-width: 832px) {
+        .footer {
+            background-color: #ffffffb3 !important;
+            border-top: 1px solid #bebebe;
+        }
+        footer .menu-item a {
+            color: black;
+        }
+        footer .menu-item i {
+            color: black;
+        }
+    }
   </style>
 <body>
     <div id="navbar-placeholder"></div>
