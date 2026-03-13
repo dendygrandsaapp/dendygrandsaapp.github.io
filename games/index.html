@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Mini Games - MoonlightBay Plus</title>
+    <script src="/head-config.js"></script>
+    <style>
+        body {
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            padding: 100px 20px 60px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Header Halaman */
+        .game-header {
+            text-align: left;
+            margin-bottom: 40px;
+            border-left: 5px solid #00e5ff;
+            padding-left: 20px;
+        }
+
+        .game-header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00e5ff; /* Aksen warna khas */
+        }
+
+        .game-header p {
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* Grid Game */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        /* Style Kartu Game */
+        .game-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #333;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #00e5ff;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+        }
+
+        /* Gambar/Thumbnail Game */
+        .game-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Konsisten dengan VOD */
+            overflow: hidden;
+            background: #222;
+        }
+
+        .game-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .game-card:hover .game-thumb img {
+            transform: scale(1.1);
+        }
+
+        /* Info Game */
+        .game-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .game-info h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .game-tag {
+            display: inline-block;
+            background: rgba(0, 229, 255, 0.1);
+            color: #00e5ff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-top: 8px;
+            font-weight: 900;
+        }
+
+        /* Tombol Play yang muncul saat hover */
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #00e5ff;
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            z-index: 2;
+        }
+
+        .game-card:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        @media (max-width: 832px) {
+            .container { padding-top: 80px; }
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* 2 Kolom di mobile */
+            .game-info h3 { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <header class="game-header">
+            <h1>Mini Games</h1>
+            <p>Mainkan game favoritmu langsung di MoonlightBay Plus.</p>
+        </header>
+
+        <div class="game-grid">
+            <a href="/games/brick-breaker" class="game-card">
+                <div class="game-thumb">
+                    <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                    <img src="https://img.itch.zone/aW1nLzExNjA5ODcucG5n/original/KqQ1Y4.png" alt="Brick Breaker">
+                </div>
+                <div class="game-info">
+                    <h3>Brick Breaker</h3>
+                    <span class="game-tag">Arcade</span>
+                </div>
+            </a>
+
+            <div class="game-card" style="opacity: 0.5; cursor: default;">
+                <div class="game-thumb">
+                    <img src="https://via.placeholder.com/300x168/111/444?text=Coming+Soon" alt="Coming Soon">
+                </div>
+                <div class="game-info">
+                    <h3>Game Baru</h3>
+                    <span class="game-tag">Segera Hadir</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+</html>
